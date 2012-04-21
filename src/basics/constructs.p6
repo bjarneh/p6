@@ -80,7 +80,7 @@ my @gen = 1,2,3 ... 10;
 
 say [q|
 # loop through a year and look for weekdays
-sub lastWeekdayEachMonth(Str $year, Str $weekday) {
+sub lastWeekdayEachMonth(Str $weekday, Int $year = Date.today.year) {
 
     my %days = {mon => 1,tue => 2,wed => 3,thu => 4,fri => 5,sat => 6,sun => 7};
 
@@ -91,11 +91,11 @@ sub lastWeekdayEachMonth(Str $year, Str $weekday) {
     .say for "$weekday " «~« @fri[1..12];
 }
 
-lastWeekdayEachMonth(1994, 'mon');
+lastWeekdayEachMonth('mon', 1994);
 |];
 
 # loop through a year and look for weekdays
-sub lastWeekdayEachMonth(Str $year, Str $weekday) {
+sub lastWeekdayEachMonth(Str $weekday, Int $year = Date.today.year) {
 
     my %days = {mon => 1,tue => 2,wed => 3,thu => 4,fri => 5,sat => 6,sun => 7};
 
@@ -106,4 +106,18 @@ sub lastWeekdayEachMonth(Str $year, Str $weekday) {
     .say for "$weekday " «~« @fri[1..12];
 }
 
-lastWeekdayEachMonth('1994', 'mon');
+lastWeekdayEachMonth('mon', 1994);
+
+
+say [q|
+# introspection similar to dir(some_object) in Python
+
+my $ob = "Str";
+
+.say for $ob.^methods();
+|];
+
+# introspection similar to dir(some_object) in Python
+
+my $ob = "Str";
+.say for $ob.^methods();
