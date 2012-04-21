@@ -80,7 +80,7 @@ my @gen = 1,2,3 ... 10;
 
 say [q|
 # loop through a year and look for weekdays
-sub printWeekdaysInYear(Str $year, Str $weekday) {
+sub lastWeekdayEachMonth(Str $year, Str $weekday) {
 
     my %days = {mon => 1,tue => 2,wed => 3,thu => 4,fri => 5,sat => 6,sun => 7};
 
@@ -91,11 +91,11 @@ sub printWeekdaysInYear(Str $year, Str $weekday) {
     .say for "$weekday " «~« @fri[1..12];
 }
 
-printWeekdaysInYear(1994, 'mon');
+lastWeekdayEachMonth(1994, 'mon');
 |];
 
 # loop through a year and look for weekdays
-sub weekdaysInYear(Str $year, Str $weekday) {
+sub lastWeekdayEachMonth(Str $year, Str $weekday) {
 
     my %days = {mon => 1,tue => 2,wed => 3,thu => 4,fri => 5,sat => 6,sun => 7};
 
@@ -106,4 +106,4 @@ sub weekdaysInYear(Str $year, Str $weekday) {
     .say for "$weekday " «~« @fri[1..12];
 }
 
-weekdaysInYear('1994', 'mon');
+lastWeekdayEachMonth('1994', 'mon');
