@@ -1,4 +1,4 @@
 p6
 ==
 
-a small set of perl6 examples
+perl6 hello world!
