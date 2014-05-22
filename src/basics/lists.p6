@@ -57,3 +57,17 @@ say [q|
 |];
 
 .say for @lst;
+
+
+
+say [q|
+# INPUT
+
+{ $_.say } for @lst;
+
+
+# OUTPUT
+|];
+
+{ $_.say } for @lst;
+
